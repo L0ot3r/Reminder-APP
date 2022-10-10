@@ -31,12 +31,14 @@ const Sidebar = ({ setSession, categories }) => {
 					>
 						{cours.map((el, index) => (
 							<li key={el.btnSlug}>
-								<button
-									className='list-aside-btn'
-									onClick={() => [setSession(index), setToggleMenu(false)]}
-								>
-									{el.btnSlug}
-								</button>
+								<a href='#session-top'>
+									<button
+										className='list-aside-btn'
+										onClick={() => [setSession(index), setToggleMenu(false)]}
+									>
+										{el.btnSlug}
+									</button>
+								</a>
 							</li>
 						))}
 					</div>

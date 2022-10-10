@@ -7,7 +7,7 @@ const Navbar = () => {
 	return (
 		<>
 			<div className='z-50 w-full bg-[#f76c6c]'>
-				<div className='max-w-7xl mx-auto flex justify-between items-center p-5 text-white sm:flex-col sm:gap-3'>
+				<div id='session-top' className='max-w-7xl mx-auto flex justify-between items-center p-5 text-white sm:flex-col sm:gap-3'>
 					<Link to='/'>
 						<h1 className='text-2xl'>Reminder</h1>
 					</Link>
