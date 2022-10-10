@@ -84,16 +84,13 @@ const Course = ({ cours, subtitle, session }) => {
 								</div>
 							))}
 							{/* STACKBLITZ */}
-							{/* {item?.stack && (
-									<pre>
-										<iframe
-											title={`test`}
-											src={item.stack}
-											frameborder='0'
-											className='h-[500px] w-full my-3'
-										/>
-									</pre>
-								)} */}
+							{item?.stack && (
+								<iframe
+									title='Open with Stackblitz'
+									src={item.stack}
+									className='h-[500px] w-full my-3'
+								/>
+							)}
 						</div>
 					))}
 				</div>
