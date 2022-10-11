@@ -6,7 +6,7 @@ const Sidebar = ({ setSession, categories }) => {
 	const categorie = data.filter((item) => item.categorie === categories);
 	const cours = categorie[0].cours;
 
-	const [toggleMenu, setToggleMenu] = useState(true);
+	const [toggleMenu, setToggleMenu] = useState(false);
 
 	const handleMenu = () => {
 		setToggleMenu(!toggleMenu);
