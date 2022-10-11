@@ -15,7 +15,7 @@ const SyntaxCode = ({ children, language }) => {
 				wrapLongLines={true}
 				codeTagProps={{
 					style: {
-						fontSize: '20px'
+						fontSize: '18px'
 					}
 				}}
 			>

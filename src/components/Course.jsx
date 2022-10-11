@@ -1,13 +1,14 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { BsInfoCircle } from 'react-icons/bs';
-import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
-import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md'
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
+import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md';
+import ReactPlayer from 'react-player';
 import { SyntaxCode } from './';
 
 const Course = ({ cours, subtitle, session }) => {
 	return (
-		<div>
+		<div className='w-full'>
 			{/* DEBUT DU COURS */}
 			<h2 className='font-semibold text-4xl md:text-2xl w-full text-center mb-6'>
 				{cours[session]?.title}
@@ -56,8 +57,7 @@ const Course = ({ cours, subtitle, session }) => {
 										{item?.txt}
 									</p>
 								</div>
-							) :
-							// TEXTE QUOTE
+							) : // {/* TEXTE QUOTE */}
 							item?.quote ? (
 								<div className='bg-[#ff6a6a3b] flex justify-center items-center p-6 py-[50px] rounded-md w-full mx-auto my-4 relative'>
 									<ImQuotesLeft className='absolute top-[-28px] left-[-28px] text-5xl text-[#fd8080]' />
@@ -72,19 +72,17 @@ const Course = ({ cours, subtitle, session }) => {
 									</p>
 									<ImQuotesRight className='absolute bottom-[-28px] right-[-28px] text-5xl text-[#fd8080]' />
 								</div>
-							) : 
-							// {/* TEXTE LINK */}
+							) : // {/* TEXTE LINK */}
 							item?.link ? (
-								<a 
-									href={item.address} 
+								<a
+									href={item.url}
 									className='font-semibold text-red-400 px-4 py-1 bg-[#cecece] hover:bg-[#8ed9f788]'
 									rel='noopener noreferrer'
 									target='_blank'
 								>
 									{item.txt}
 								</a>
-							)
-							: (
+							) : (
 								// {/* TEXTE NORMAL */}
 								<p
 									className={`text-justify md:text-left sm:text-justify text-lg md:text-base pl-2 ${
@@ -94,7 +92,18 @@ const Course = ({ cours, subtitle, session }) => {
 									{item?.txt}
 								</p>
 							)}
-
+							{/* SUBTITLE */}
+							{item?.subtitle && (
+								<h5
+									className={`font-semibold ${
+										item?.subtitle?.small ? 'text-lg' : 'text-2xl'
+									} md:text-xl ${
+										item?.subtitle?.color ? item?.subtitle?.color : 'text-black'
+									}`}
+								>
+									{item.subtitle.txt}
+								</h5>
+							)}
 							{/* IMAGE */}
 							{item?.img && (
 								<img
@@ -102,12 +111,12 @@ const Course = ({ cours, subtitle, session }) => {
 									alt={item?.title}
 									width={item?.img.width}
 									height={item?.img.height}
-									className='mx-auto rounded-lg'
+									className='mx-auto rounded-lg my-5'
 								/>
 							)}
 							{/* SEPARATEUR */}
 							{item?.hr && <hr className='border-t-2 border-slate-300 my-5' />}
-							{/* CODE EXAMPLE */}
+							{/* CODE EXEMPLE */}
 							{item?.sample?.map((code) => (
 								<div className='w-full mx-auto md:w-[320px]' key={nanoid()}>
 									<SyntaxCode language={code?.style}>{code?.code}</SyntaxCode>
@@ -120,6 +129,16 @@ const Course = ({ cours, subtitle, session }) => {
 									src={item.stack}
 									className='h-[500px] w-full my-3'
 								/>
+							)}
+							{/* PLAYER VIDEO */}
+							{item?.video && (
+								<div className='w-full'>
+									<ReactPlayer
+										url={item.video.url}
+										className='react-player'
+										controls
+									/>
+								</div>
 							)}
 						</div>
 					))}

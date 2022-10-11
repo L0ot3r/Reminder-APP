@@ -835,7 +835,7 @@ document.getElementById('root')
 								{
 									link: true,
 									txt: `Modèle`,
-									address: 'https://stackblitz.com/edit/01-react-challange-jqk2x3?file=src%2Findex.js'
+									url: 'https://stackblitz.com/edit/01-react-challange-jqk2x3?file=src%2Findex.js'
 								},
 								{
 									img: {
@@ -1491,6 +1491,233 @@ const App = () => {
 					],
 				},
 			},
+			{
+				title: `👩‍🏫 React Basics 06 - Expressions et instruction en JSX`,
+				btnSlug: `Expressions et instruction en JSX`,
+				body: {
+					subtitle: {
+						txt: 'Introduction'
+					},
+					text: [
+						{
+							body: [
+								{
+									txt: `Dans la quête précédente, tu as découvert comment envoyer des informations aux composants enfants à l'aide des props.`
+								},
+								{
+									txt: `Les informations étaient affichées dans la console, mais n'étaient toujours pas affichées dans le navigateur. Pourquoi ?`
+								},
+								{
+									txt: `Parce que tu n'as pas indiqué à React que tu voulais mélanger les props et le code JSX. Comment faire?`
+								},
+								{
+									txt: `En utilisant des expressions JSX.`
+								},
+								{
+									txt: `Dans cette quête, tu verras ce que sont les expressions et instructions. Tu verras également comment les utiliser dans React.`
+								},
+								{
+									txt: `Commençons!`,
+									bold: true
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/I8C5dB0NNjYDVcsTzsdZiBKckd3iCn72.jpeg',
+										width: '900px'
+									}
+								},
+								{
+									title: {
+										txt: `🤓 À la fin de cette quête, tu seras en mesure de comprendre :`
+									}
+								},
+								{
+									txt: `✅ Ce qu'est une instruction en JavaScript & React`,
+									isList: true
+								},
+								{
+									txt: `✅ Ce qu'est une expression en JavaScript & React`,
+									isList: true
+								},
+								{
+									txt: `✅ Ce que tu dois utiliser dans React`,
+									isList: true
+								},
+								{
+									txt: `#### Expressions et instructions`
+								},
+								{
+									txt: `Avant d'explorer chaque concept, regarde la vidéo ci-dessous :`
+								},
+								{
+									video: {
+										url: 'https://youtu.be/WVyCrI1cHi8'
+									}
+								},
+								{
+									txt: `Maintenant que tu as vu une petite introduction, allons un peu plus loin dans le détail sur les Expressions et les Instructions, avec des exemples de la façon dont elles sont utilisées dans React.`
+								},
+								{
+									subtitle : {
+										color: 'text-red-400',
+										txt: `Expressions`
+									}
+								},
+								{
+									txt: `Une expression est quelque chose qui peut être remplacé par une valeur.`
+								},
+								{
+									subtitle: {
+										small: true,
+										txt: `Exemple 1`
+									}
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `const isOnline = true;
+
+isOnline ? "User is Online" : "User is Offline"`
+										}
+									]
+								},
+								{
+									txt: `L'exemple ci-dessus utilise l'opérateur ternaire qui "renvoie" une valeur selon une condition. La première valeur entre le "?" et le ":" est retournée quand la condition est vraie. La seconde la valeur après le ":" est retournée quand la condition est fausse.`
+								},
+								{
+									txt: `Dans cet exemple, la ligne 3 peut être remplacée par la valeur "User is online". C'est parce que la variable isOnline de la ligne 1 est associée à true.`
+								},
+								{
+									hr: true
+								},
+								{
+									subtitle: {
+										small: true,
+										txt: `Exemple 2`
+									}
+								},
+								{
+									txt: `Un autre exemple d'expression serait n'importe quelle méthode avancée de tableau .map , .filter, etc.`
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `const numbers = [1, 4, 9, 16];
+
+// pass a function to map
+const numbersMultipliedBy2 = numbers.map(number => number * 2);
+
+console.log(numbersMultipliedBy2);
+// expected output: Array [2, 8, 18, 32]`
+										}
+									]
+								},
+								{
+									isList: true,
+									txt: `Dans l'exemple ci-dessus, nous avions initialement un tableau appelé numbers.`
+								},
+								{
+									isList: true,
+									txt: `Nous avons ensuite créé une variable appelée numbersMultipliedBy2 : cette variable contient le résultat renvoyé de l'opération de mappage qui a multiplié tous les nombres du tableau de nombres d'origine par 2.`
+								},
+								{
+									isList: true,
+									txt: `Cela a entraîné le "retour" d'un nouveau tableau assigné à la variable numbersMultipliedBy2.`
+								},
+								{
+									info: true,
+									txt: `Rappelle-toi que les expressions retournent des valeurs`
+								},
+								{
+									subtitle: {
+										txt: `Instructions`,
+										color: 'text-red-400',
+									}
+								},
+								{
+									txt: `Une instruction est quelque chose qui exécute ou contrôle une ou plusieurs actions mais qui ne renvoie pas de valeur.`
+								},
+								{
+									subtitle: {
+										small: true,
+										txt: 'Exemple 1'
+									}
+								},
+								{
+									txt: `Un premier exemple d'instruction est la structure de contrôle if / else :`
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `const testScore = 60;
+
+if(testScore > 50) {
+	console.log('You have passed the test')
+} else {
+	console.log('You need to retake the test')
+}`
+										}
+									]
+								},
+								{
+									isList: true,
+									txt: `Dans l'exemple ci-dessus, nous avons une variable testScore avec la valeur 60.`
+								},
+								{
+									isList: true,
+									txt: `L'instruction if effectue une action pour vérifier si le score est supérieur à 50 ou non.`
+								},
+								{
+									isList: true,
+									txt: `Le résultat est soit le premier console.log, soit le second.`
+								},
+								{
+									isList: true,
+									txt: `Aucune valeur n'est renvoyée ici, seule une action est en cours d'exécution.`
+								},
+								{
+									hr: true
+								},
+								{
+									subtitle: {
+										small: true,
+										txt: 'Exemple 2'
+									}
+								},
+								{
+									txt: `Un deuxième exemple d'instruction est la structure de contrôle boucle for.`
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `for (i = 0; i < 5; i++) {
+	console.log(\`The current number in the loop is \${[i]}\`)
+}`
+										}
+									]
+								},
+								{
+									txt: `Dans l'exemple ci-dessus, la boucle for répète une action (le console.log), mais ne renvoie pas de valeur.`
+								},
+								{
+									info: true,
+									semiBold: true,
+									txt: `Rappelle-toi que les instructions accomplissent une ou plusieurs actions, mais qu'elles ne retournent pas de valeurs.`
+								},
+								{
+									subtitle: {
+										txt: `Expressions et instructions dans React ?`
+									}
+								},
+							]
+						}
+					]
+				}
+			}
 		],
 	},
 ];

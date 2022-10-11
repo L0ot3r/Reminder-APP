@@ -60,5 +60,16 @@ code {
   background: #8b5656;
 }
 
+.react-player {
+  margin: 20px auto;
+  box-shadow: 5px 5px 20px #333;
+}
+
+@media screen and (max-width: 767px) {
+  .react-player {
+    width: 100%!important
+  }
+}
+
 
 
