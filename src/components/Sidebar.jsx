@@ -6,44 +6,42 @@ const Sidebar = ({ setSession, categories }) => {
 	const categorie = data.filter((item) => item.categorie === categories);
 	const cours = categorie[0].cours;
 
-	const [toggleMenu, setToggleMenu] = useState(false);
+	const [toggleMenu, setToggleMenu] = useState(true);
 
 	const handleMenu = () => {
 		setToggleMenu(!toggleMenu);
 	};
 
 	return (
-		<aside className='sticky top-[0px] w-[60px] h-full px-3'>
-			<ul
-				className={`flex flex-col w-max justify-center items-center gap-2 pt-5`}
-				onMouseLeave={() => setToggleMenu(false)}
+		<aside
+			className='sticky top-[40px] w-[60px] h-full px-3'
+			onMouseLeave={() => setToggleMenu(false)}
+		>
+			<button className='icons-side' onClick={handleMenu}>
+				<VscNotebook size={30} />
+			</button>
+			<div
+				className={`list-aside ${
+					toggleMenu
+						? 'opacity-1 translate-x-0'
+						: 'opacity-0 translate-x-[-100%]'
+				}`}
 			>
-				<div className={`container-btn-aside`}>
-					<button className='icons-side' onClick={handleMenu}>
-						<VscNotebook size={30} />
-					</button>
-					<div
-						className={`list-aside ${
-							toggleMenu
-								? 'opacity-1 translate-x-0 pointer-events-auto'
-								: 'opacity-0 translate-x-[-100%] pointer-events-none'
-						}`}
-					>
-						{cours.map((el, index) => (
-							<li key={el.btnSlug}>
-								<a href='#session-top'>
-									<button
-										className='list-aside-btn'
-										onClick={() => [setSession(index), setToggleMenu(false)]}
-									>
-										{el.btnSlug}
-									</button>
-								</a>
-							</li>
-						))}
-					</div>
-				</div>
-			</ul>
+				<ul>
+					{cours.map((el, index) => (
+						<li key={el.btnSlug}>
+							<a href='#session-top'>
+								<button
+									className='list-aside-btn'
+									onClick={() => [setSession(index), setToggleMenu(false)]}
+								>
+									{el.btnSlug}
+								</button>
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
 		</aside>
 	);
 };

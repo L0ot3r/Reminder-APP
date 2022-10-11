@@ -702,6 +702,7 @@ export default CssModule;`,
 									txt: `Dans cette quête, nous allons découvrir JSX, ainsi que quand et comment l'utiliser.`,
 								},
 								{
+									bold: true,
 									txt: `Commençons ! 🚀`,
 								},
 								{
@@ -709,6 +710,17 @@ export default CssModule;`,
 										src: 'https://res.cloudinary.com/practicaldev/image/fetch/s--9hrIvLVU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/9tzvuoyi4q1xo7jo6bil.png',
 										width: '100%',
 									},
+								},
+								{
+									title: {
+										txt: `🤓 À la fin de cette quête, tu pourras :`
+									}
+								},
+								{
+									txt: `✅ Comprendre comment une application React est affichée`
+								},
+								{
+									txt: `✅ Comprendre la notation JSX`
 								},
 								{
 									title: {
@@ -817,6 +829,70 @@ document.getElementById('root')
 										width: '100%',
 									},
 								},
+								{
+									txt: `Commence par forker le modèle fourni après t'être connecté à StackBlitz :`
+								},
+								{
+									link: true,
+									txt: `Modèle`,
+									address: 'https://stackblitz.com/edit/01-react-challange-jqk2x3?file=src%2Findex.js'
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/9AdopQRYrdHCFpJVCsWHn2F4btXIseuT.png',
+										width: '100%'
+									}
+								},
+								{
+									txt: `Dans ce modèle, un seul élément JSX est fourni, mais il ne contient qu'une seule <div> vide, à l'intérieur de laquelle tu dois ajouter tout ton contenu.`
+								},
+								{
+									txt: `Voici quelques lignes directrices :`
+								},
+								{
+									isList: true,
+									txt: `Utilise du HTML statique uniquement.`
+								},
+								{
+									isList: true,
+									txt: `Ne modifie pas le CSS, même si le résultat n'est pas exactement comme sur la maquette.`
+								},
+								{
+									isList: true,
+									txt: `Utilise une <div/> pour contenir chaque contact.`
+								},
+								{
+									isList: true,
+									txt: `Utilise un <h3> pour contenir le nom`
+								},
+								{
+									isList: true,
+									txt: `Utilise un <h4> pour contenir l'e-mail et le téléphone (utilise un <br /> pour les séparer).`
+								},
+								{
+									isList: true,
+									txt: `Utilise un <button> pour ajouter le bouton de suppression.`
+								},
+								{
+									txt: `Poste l'URL de ton StackBlitz afin de valider ta quête.`
+								},
+								{
+									title: {
+										txt: `🧐 Critères de validation`
+									}
+								},
+								{
+									isList: true,
+									txt: `Il y a au moins 5 contacts dans ton application`
+								},
+								{
+									isList: true,
+									txt: `La <div> est un parent des éléments <h3>, <h4> et <button>`
+								},
+								{
+									isList: true,
+									txt: `Le code est disponible sur StackBlitz`
+								},
 							],
 						},
 					],
@@ -829,6 +905,20 @@ document.getElementById('root')
 					text: [
 						{
 							body: [
+								{
+									title: {
+										txt: `🤓 A la fin de cette quête, tu seras capable de :`
+									}
+								},
+								{
+									txt: `✅ Comprendre comment créer et utiliser un composant dans React.`
+								},
+								{
+									txt: `✅ Comprendre comment fonctionne la ré-utilisabilité d'un composant dans React.`
+								},
+								{
+									txt: `✅ Comprendre la structure d'un composant écrit à l'aide d'une fonction ou d'une classe.`
+								},
 								{
 									hr: true,
 								},
@@ -849,6 +939,7 @@ document.getElementById('root')
 									txt: `C'est le moment d'introduire de nouveaux concepts :`,
 								},
 								{
+									bold: true,
 									txt: `React Components`,
 								},
 								{
@@ -931,6 +1022,7 @@ render() {
 									],
 								},
 								{
+									semiBold: true,
 									txt: `Il y a beaucoup de différences entre les composants fonctionnels et les composants de classe. (mais nous verrons cela un peu plus tard).`,
 								},
 								{
@@ -983,6 +1075,106 @@ const MyComponent = () => {
 										},
 									],
 								},
+								{
+									txt: `Une fois un composant créé (avec une fonction ou une classe, peu importe), tu peux l'utiliser dans ton application comme une nouvelle balise HTML (et tu même l'utiliser plusieurs fois si tu le souhaites) :`
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `import React from 'react';
+
+import ReactDOM from 'react-dom';
+
+const MyComponent = () => {
+	return (
+		<div>
+			<div>
+				<h1>Première div</h1>
+			</div>
+			<div>
+				<h2>Seconde div</h2>
+			</div>
+		</div>
+	);
+};
+
+export const App = (
+	<div>
+		<MyComponent />
+		<MyComponent />
+		<MyComponent />
+		<MyComponent />
+		<MyComponent />
+	</div>
+);
+
+ReactDOM.render(App, document.getElementById('root'));`
+										}
+									]
+								},
+								{
+									title: {
+										txt: `💪 Challenge`
+									}
+								},
+								{
+									txt: `Ton but est de créer un composant <Contact /> qui renverra le bloc HTML d'un contact que tu as écrit dans l'exercice précédent.`
+								},
+								{
+									txt: `Utilise le projet que tu as créé dans la quête précédente.`,
+									bold: true
+								},
+								{
+									txt: `Tu peux aussi utiliser le template suivant si besoin.`
+								},
+								{
+									txt: `Voici les différents points à respecter :`
+								},
+								{
+									isList: true,
+									txt: `Tu dois créer la fonction nommée Contact. Ce sera ton composant React.`
+								},
+								{
+									isList: true,
+									txt: `Le composant <Contact /> doit être un composant fonctionnel.`
+								},
+								{
+									isList: true,
+									txt: `Le composant <Contact /> retourne un bloc HTML qui correspond à un contact :`
+								},
+								{
+									isList: true,
+									txt: `1 - Souviens-toi que ton composant ne doit retourner qu'un seul nœud DOM !`
+								},
+								{
+									isList: true,
+									txt: `Tu devras supprimer le contact que tu as créé précédemment dans ton App.`
+								},
+								{
+									isList: true,
+									txt: `Utilise ton nouveau composant <Contact /> depuis ton App.`
+								},
+								{
+									isList: true,
+									txt: `Appelle ton composant 5 fois. Ton contact sera donc affiché 5 fois avec les même valeurs : ne t'inquiète pas, nous améliorerons ce composant dans la prochaine quête.`
+								},
+								{
+									txt: `Pour valider ta quête, soumet l'URL de ton StackBlitz.`
+								},
+								{
+									title: {
+										txt: `🧐 Critères de validation`
+									}
+								},
+								{
+									isList: true,
+									txt: `Ton code contient un composant <Contact /> qui est créé et utilisé dans ton App.`
+								},
+								{
+									isList: true,
+									txt: `Ton code est disponible sur StackBlitz.`
+								},
 							],
 						},
 					],
@@ -1023,6 +1215,277 @@ const MyComponent = () => {
 									bold: true,
 									txt: `Paré à décoller ! 🚀`,
 								},
+								{
+									title: {
+										bold: true,
+										txt: `🤓 A la fin de cette quête, tu :`,
+									},
+								},
+								{
+									isList: true,
+									txt: `✅ Comprendras ce que sont les props.`,
+								},
+								{
+									isList: true,
+									txt: `✅ Comprendras "comment" les props fonctionnent et transmettent les informations d'un composant parent à ses enfants`,
+								},
+								{
+									bold: true,
+									title: {
+										txt: `Composants Parent et Enfant`,
+									},
+								},
+								{
+									txt: `Ce concept va être fondamental avant même que l'on parle des props et de leur fonctionnement.
+									Prenons un instant pour nous rappeler notre arbre de composants. Tout est basé sur une hiérarchie. Le composant App est toujours au sommet de cet arbre, et tous les sous-composants sont appelés à partir d'ici.`,
+								},
+								{
+									txt: `On parle de relation Parent/Enfant lorsqu'un composant (Parent) contient un appel à un autre composant (Enfant). Dans l'application ci-desous le composant App appelle un composant Contact. On dit donc qu'App est le parent de chaque Contact.`,
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/kmsdzTzxEPWrokUzC0uUXUAfr2a4sscD.png',
+										width: '100%',
+									},
+								},
+								{
+									txt: `A partir de maintenant, garde ce concept à l'esprit lorsque tu construis une app en React et que tu utilises des props. Réfère toi toujours à ton arbre de composants pour déterminer où devrait se trouver l'information et à qui elle devrait être transmise.`,
+								},
+								{
+									title: {
+										bold: true,
+										txt: `Que sont les props ?`,
+									},
+								},
+								{
+									txt: `“props” est un mot réservé en React, et il indique les propriétés transmises d'un composant à un autre. Attention, les props sont en lecture seule, ce qui signifie que les données qu'un composant reçoit ne devraient jamais être modifiées.`,
+								},
+								{
+									bold: true,
+									txt: `Les props sont transmises d'un Parent à ses Enfants.`,
+								},
+								{
+									txt: `Illustrons tout ça avec l'application que nous avons développée jusqu'ici : Contact devrait recevoir trois props (un nom, un numéro de téléphone et un age). Lorsqu'on appelle le composant depuis App, on va les lui donner avec la syntaxe propriété=valeur (comme en HTML). Pour y voir clair, voici une illustration :`,
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/AVnFnjet9aMYYX0qRGCHOxzg03yaiJlj.png',
+										width: '100%',
+									},
+								},
+								{
+									txt: `Une chose importante à noter :`,
+								},
+								{
+									quote: true,
+									txt: `Les propriétés et leurs valeurs sont "empaquetées" dans un objet pour être envoyées au composant enfant. Tu peux récupérer cet objet grâce au premier paramètre de ta fonction composant.`,
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `import React from "react";
+
+function Contact (props) {
+	
+	console.log(props)
+	// logs: { name: "Emmanuel", phone: "15525264", age: 22 }
+
+	console.log(props.name)
+	// logs: "Emmanuel"
+
+	return (
+		<div>My Contact component</div>
+	)
+}
+
+export default Welcome;`,
+										},
+									],
+								},
+								{
+									quote: true,
+									txt: `La propriété "age" est particulière : on utilise des accolades ({}) qui représentent une expression JSX. On en reparlera plus en détail dans une prochaine quête mais pour le moment, tu peux te dire que ce qui se trouve dans ces accolades est du code JS qui doit être exécuté (18+4=22, la vraie valeur de age dans l'objet qui représente les props)`,
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `import React from 'react';
+
+const Contact = (props) => {
+	console.log(props.age)
+	// logs: 22
+	
+	return <div>My contact component</div>
+}
+
+
+const App = () => {
+	return <Contact name="Emmanuel" age={18+4} />
+}`,
+										},
+									],
+								},
+								{
+									txt: `Tu peux envoyer n'importe quel type de données via ces propriétés : non seulement des chaînes de caractères ("Emmanuel", "15525264"), mais aussi des booléens, tableaux, fonctions, nombres, etc... Mais il te faudra alors utiliser les accolades comme vu ci-dessus, car ce sont des expressions JSX.`,
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `<Contact name="Emmanuel" isDeletable={false} favoriteColors={["red", "blue"]} />`,
+										},
+									],
+								},
+								{
+									txt: `Tu peux aussi utiliser ces expressions JSX dans le rendu de ton composant pour afficher le contenu de la variable comme du texte.`,
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `import React from 'react';
+
+const Contact = (props) => {
+	console.log(props.age)
+	// logs: 22
+
+	return <div>My age is {props.age}</div>
+}
+
+const App = () => {
+	// Will show My age is 22 in the browser (not in console)
+	return <Contact name="Emmanuel" age={18+4} />
+}`,
+										},
+									],
+								},
+								{
+									quote: true,
+									txt: `Si tu ne passes aucune propriété depuis le parent, l'objet props existera mais sera un objet vide.`,
+								},
+								{
+									sample: [
+										{
+											style: 'jsx',
+											code: `import React from 'react';
+
+const Contact = (props) => {
+	console.log(props)
+	// will log {}, an empty object
+
+	return <div>Contact component</div>
+}
+
+
+const App = () => {
+	return <Contact />
+}`,
+										},
+									],
+								},
+								{
+									txt: `Utiliser les props rend ton composant dynamique, et cela va nous permettre d'afficher du contenu différent à chaque appel (en fonction des valeurs envoyées) en gardant une structure de base identique.`
+								},
+								{
+									txt: `Prenons un autre exemple : une App qui aura des enfants WelcomeMessage. Le diagramme de notre app ressemblerait à ceci :`
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/HTrQhaPPcSLFw6utkgXaepQa22G8pgr0.png',
+										width: '70%'
+									}
+								},
+								{
+									txt: `Et le code ressemblerait à ceci (tu remarqueras qu'il y a deux fichiers : un App.jsx qui envoie les données et un WelcomeMessage.jsx qui les reçoit) :`
+								},
+								{
+									stack: 'https://stackblitz.com/edit/react-egbryl?file=src%2FApp.js&embed=1'
+								},
+								{
+									isList: true,
+									txt: `Dans le code ci-dessus, on appelle deux fois le composant WelcomeMessage depuis App`
+								},
+								{
+									isList: true,
+									txt: `Lorsqu'on appelle WelcomeMessage on lui envoie des props spécifiques (le nom: "Luke" ou "John")`
+								},
+								{
+									isList: true,
+									txt: `Dans la fonction définie dans src/components/WelcomeMessage.jsx, on reçoit les props en tant que paramètre.`
+								},
+								{
+									isList: true,
+									txt: `On utilise ensuite console.log(props) pour afficher le contenu de l'objet dans notre outil de développement. Ouvre la console pour voir ce qui s'y passe`
+								},
+								{
+									title: {
+										txt: `☝️ Résumé`
+									}
+								},
+								{
+									isList: true,
+									txt: `Les props transitent d'un composant Parent à un composant Enfant`
+								},
+								{
+									isList: true,
+									txt: `Les props sont en lecture seule`
+								},
+								{
+									isList: true,
+									txt: `Les props peuvent être de n'importe quel type (string, fonction, nombre, etc)`
+								},
+								{
+									isList: true,
+									txt: `Les props sont toujours représentés dans un objet, avec ses clés et valeurs`
+								},
+								{
+									isList: true,
+									txt: `On utilise la syntaxe JSX pour évaluer des expressions JS dans le retour de notre composant`
+								},
+								{
+									title: {
+										txt: `💪 Challenge`
+									}
+								},
+								{
+									title: {
+										txt: `Rends ton composant <Contact /> dynamique`,
+										color: 'text-red-400'
+									}
+								},
+								{
+									txt: `Voici toutes les étapes. Lis les toutes avant de démarrer le challenge !`
+								},
+								{
+									isList: true,
+									txt: `Utilise ce template pour commencer (ou édite le code de tes exercices précédents)`
+								},
+								{
+									isList: true,
+									txt: `Assure toi d'être bien connecté à StackBlitz`
+								},
+								{
+									isList: true,
+									txt: `Trouve les cinq appels à Contact. Pour chacun d'entre eux, tu devras passer des props différents au composant :`
+								},
+								{
+									isList: true,
+									txt: `1 - Name`
+								},
+								{
+									isList: true,
+									txt: `2 - Email`
+								},
+								{
+									isList: true,
+									txt: `3 - Phone`
+								},
+								{
+									isList: true,
+									txt: `Adapte le console.log pour afficher les props dans la console`
+								}
 							],
 						},
 					],

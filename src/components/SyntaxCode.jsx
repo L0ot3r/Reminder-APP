@@ -13,6 +13,11 @@ const SyntaxCode = ({ children, language }) => {
 				style={vsdarkplus}
 				showLineNumbers={true}
 				wrapLongLines={true}
+				codeTagProps={{
+					style: {
+						fontSize: '20px'
+					}
+				}}
 			>
 				{children}
 			</SyntaxHighlighter>

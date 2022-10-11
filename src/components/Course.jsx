@@ -1,6 +1,8 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import { BsInfoCircle } from 'react-icons/bs';
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im'
+import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md'
 import { SyntaxCode } from './';
 
 const Course = ({ cours, subtitle, session }) => {
@@ -54,7 +56,35 @@ const Course = ({ cours, subtitle, session }) => {
 										{item?.txt}
 									</p>
 								</div>
-							) : (
+							) :
+							// TEXTE QUOTE
+							item?.quote ? (
+								<div className='bg-[#ff6a6a3b] flex justify-center items-center p-6 py-[50px] rounded-md w-full mx-auto my-4 relative'>
+									<ImQuotesLeft className='absolute top-[-28px] left-[-28px] text-5xl text-[#fd8080]' />
+									<p
+										className={`text-xl md:text-base pl-2 ${
+											item?.bold
+												? 'font-bold'
+												: item?.semiBold && 'font-semibold'
+										}`}
+									>
+										{item.txt}
+									</p>
+									<ImQuotesRight className='absolute bottom-[-28px] right-[-28px] text-5xl text-[#fd8080]' />
+								</div>
+							) : 
+							// {/* TEXTE LINK */}
+							item?.link ? (
+								<a 
+									href={item.address} 
+									className='font-semibold text-red-400 px-4 py-1 bg-[#cecece] hover:bg-[#8ed9f788]'
+									rel='noopener noreferrer'
+									target='_blank'
+								>
+									{item.txt}
+								</a>
+							)
+							: (
 								// {/* TEXTE NORMAL */}
 								<p
 									className={`text-justify md:text-left sm:text-justify text-lg md:text-base pl-2 ${
