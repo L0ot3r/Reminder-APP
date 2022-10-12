@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Feed, Home, Navbar } from './components';
+import { Feed, Home, Navbar, VideosFeed } from './components';
 
 const App = () => {
 	return (
@@ -11,6 +11,7 @@ const App = () => {
 					<Routes>
 						<Route path='/' exact element={<Home />} />
 						<Route path={`/course`} element={<Feed />} />
+						<Route path={`/videos`} element={<VideosFeed />} />
 					</Routes>
 				</div>
 			</div>

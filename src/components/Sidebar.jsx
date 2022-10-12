@@ -28,7 +28,7 @@ const Sidebar = ({ setSession, categories }) => {
 				}`}
 			>
 				<ul>
-					{cours.map((el, index) => (
+					{cours?.map((el, index) => (
 						<li key={el.btnSlug}>
 							<a href='#session-top'>
 								<button

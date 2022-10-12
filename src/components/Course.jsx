@@ -2,7 +2,6 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import { BsInfoCircle } from 'react-icons/bs';
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
-import { MdOutlineCheckBoxOutlineBlank } from 'react-icons/md';
 import ReactPlayer from 'react-player';
 import { SyntaxCode } from './';
 

@@ -3,42 +3,113 @@ export const data = [
 		categorie: 'js',
 		cours: [
 			{
-				title: 'Javascript 1',
-				btnSlug: 'Javascript 1',
+				title: `👩‍🏫 JS Basics 01 - Qu'est-ce que JavaScript`,
+				btnSlug: `Qu'est-ce que JavaScript`,
 				body: {
 					subtitle: {
-						txt: 'Débuter en Javascript',
+						txt: 'Introduction',
 					},
 					text: [
 						{
 							body: [
 								{
-									txt: 'Premier Texte Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, explicabo.',
+									txt: `Pour commencer ton périple, et avant de coder, tu dois comprendre ce qu'est JavaScript, et comment il fonctionne.`,
+								},
+								{
+									txt: `Dans cette quête, tu vas voir ce qu'est JavaScript, quelle est son histoire, et ce que tu peux faire avec.`
 								},
 								{
 									img: {
-										src: 'https://images.innoveduc.fr/react/02-component/react-component-name-misspelling.png',
+										src: 'https://storage.googleapis.com/quest_editor_uploads/kMQp530PHYBYo6YSxFS0tBZDUErkIoUj.png',
 										width: '100%',
-										height: '90px',
 									},
 								},
 								{
-									sample: [
-										{
-											style: 'jsx',
-											code: `import React from 'react;
-								
-		export const App = () => {
-			// Mon Code
-		}
-		
-		export default App;`,
-										},
-									],
+									subtitle: {
+										txt: `🤓 À la fin de cette quête, tu sauras :`
+									}
 								},
 								{
-									txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dolor veniam aliquam error non, atque iste aut soluta corporis corrupti.',
+									isList: true,
+									txt: `✅ Ce qu'est JavaScript`
 								},
+								{
+									isList: true,
+									txt: `✅ Ce que tu peux faire avec`
+								},
+								{
+									title: {
+										txt: `📖 Définition`
+									}
+								},
+								{
+									txt: `Tu sais que l'HTML définit la structure d'une page web.
+									Le CSS donne du style aux pages.`,
+								},
+								{
+									txt: `Mais du coup, quel est le rôle du JS ici ?`,
+									bold: true
+								},
+								{
+									txt: `C'est un langage de programmation qui ajoute de l'interactivité aux pages web.`,
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/X5mLGHhqR3xtOnCuAYk390Rj7CP6zn1t.gif',
+										width: 600
+									}
+								},
+								{
+									title: {
+										txt: `📕 Son histoire`
+									}
+								},
+								{
+									txt: `JavaScript a été conçu pour être utilisé côté frontend (dans le navigateur donc). Mais depuis 2009, il est possible de créer du code backend (côté serveur donc) avec NodeJS ! 🔥`
+								},
+								{
+									img: {
+										src: 'https://storage.googleapis.com/quest_editor_uploads/2ts9EH2ghEZZ5wzd1gd85oTAmieJfZKX.png',
+										width: 700
+									}
+								},
+								{
+									info: true,
+									txt: `Selon la légende, Brendan Eich a écrit JavaScript en 10 jours 🤓`
+								},
+								{
+									subtitle: {
+										txt: `📚 Pour connaître l'historique du JS, regarde cette courte vidéo:`,
+										semiBold: true
+									}
+								},
+								{
+									video: {
+										url: `https://youtu.be/Sh6lK57Cuk4`
+									}
+								},
+								{
+									title: {
+										txt: `🤔 Java?`
+									}
+								},
+								{
+									subtitle: {
+										txt: `⚠️ Attention:`
+									}
+								},
+								{
+									txt: `Bien que leurs noms semblent similaires, JavaScript est totalement différent de Java.
+									JS est appelé JavaScript car quand il a été créé, Java était populaire, donc les créateurs ont pensé qu'ajouter Java dans son nom le rendrait plus accessible.`
+								},
+								{
+									img: {
+										src: `https://storage.googleapis.com/quest_editor_uploads/GDEHgO1LAWfNflluyhBR7h6f2zFu5tDq.png`,
+										width: 700
+									}
+								},
+								{},
+								{},
 							],
 						},
 					],
