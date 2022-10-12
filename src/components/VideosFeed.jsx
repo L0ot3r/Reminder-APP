@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { fetchFromAPI } from '../utils/fetchFromAPI';
 import { nanoid } from 'nanoid';
 import VideoCard from './VideoCard';
 
